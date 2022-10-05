@@ -36,6 +36,10 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.openid',
     'allauth.socialaccount.providers.linkedin_oauth2',
     'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.twitter',
+    'allauth.socialaccount.providers.yahoo',
+    'allauth.socialaccount.providers.reddit',
+
   
 
 ]
@@ -154,7 +158,14 @@ SOCIALACCOUNT_PROVIDERS = {
             'repo',
             'read:org',
         ],
+    },
+        'reddit': {
+        'AUTH_PARAMS': {'duration': 'permanent'},
+        'SCOPE': ['identity', 'submit'],
+        'USER_AGENT': 'django:myappid:1.0 (by /u/yourredditname)',
     }
+    
+    
    
 }
 

@@ -1,6 +1,7 @@
 {% extends 'homePage.html' %}
 {%load static%}
 {% load crispy_forms_tags %}
+{% load socialaccount %}
 {% block title %}Login{% endblock title %}
 {% block header %}
 {% endblock header %}
@@ -17,6 +18,11 @@
                 </form>
             </div>   
     </div>
+    {% if user.is_authenticated %}
+    <p>Welcome, You are logged in as {{ user.username }}</p>
+  {% else %}
+    <a href="/accounts/login/">Login With External Authentication</a>
+  {% endif %} 
 </div>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 {% endblock body %}

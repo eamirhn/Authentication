@@ -7,5 +7,4 @@ urlpatterns = [
     path('login/', loginView, name='login'),
     path('', homeView, name='home'),
     path('logout/', logOutView, name='logOut')
-
 ]

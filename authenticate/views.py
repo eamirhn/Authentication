@@ -60,3 +60,7 @@ def logOutView(request):
         logout(request)
         messages.success(request, 'Goodbay!')
         return redirect('/login/')
+
+
+def parkinsonView(request):
+    return render(request, 'authenticate/data_parkinson.html')

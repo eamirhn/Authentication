@@ -1,0 +1,40 @@
+{% extends 'homePage.html' %}
+{%load static%}
+{% load crispy_forms_tags %}
+{% load socialaccount %}
+{% block title %}Researcher{% endblock title %}
+{% block header %}
+{% endblock header %}
+{% block body %}
+<style>
+.center-things{
+    margin-left: auto;
+    margin-right: auto;}
+</style>
+<div class="container-md px-4">
+    <div class="row align-items-center row-cols-1 gx-5" style="margin-top:3rem;">
+        <div class="col-3 center-things">
+            <div class="list-group">
+                <a href="{% url 'parkinson' %}">
+                    <button type="button" class="list-group-item list-group-item-action">PD Research Parkinson Disease</button>
+                </a>
+            </div>
+        </div>
+        
+        <div class="col-3 center-things">
+            <div class="list-group"> 
+                <a href="{% static 'data1.txt' %}" class="list-group-item list-group-item-action">Data 1</a>
+                <a href="{% static 'data2.txt' %}" class="list-group-item list-group-item-action">Data 2</a>
+                <a href="{% static 'data3.txt' %}" class="list-group-item list-group-item-action">Data 3</a>
+                <a href="{% static 'data4.txt' %}" class="list-group-item list-group-item-action">Data 4</a>
+                <a href="{% static 'data5.txt' %}" class="list-group-item list-group-item-action">Data 5</a>
+                <a href="{% static 'data6.txt' %}" class="list-group-item list-group-item-action">Data 6</a>
+            
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+{% endblock body %}

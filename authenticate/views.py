@@ -64,3 +64,12 @@ def logOutView(request):
 
 def parkinsonView(request):
     return render(request, 'authenticate/data_parkinson.html')
+
+def patientView(request):
+    return render(request, 'authenticate/patient.html')
+
+def physicianView(request):
+    return render(request, 'authenticate/physician.html')
+    
+def researcherView(request):
+    return render(request, 'authenticate/researcher.html')

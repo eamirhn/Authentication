@@ -1,0 +1,36 @@
+{% extends 'homePage.html' %}
+{%load static%}
+{% load crispy_forms_tags %}
+{% load socialaccount %}
+{% block title %}Patient{% endblock title %}
+{% block header %}
+{% endblock header %}
+{% block body %} 
+<style>
+.pad-youtub{
+    margin-top:4rem;
+}
+</style>
+<div class="container-md px-4">
+<div class="row align-items-center row-cols-2 gx-5">
+    <div class="col pad-youtub">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WRyPQO_u_qE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="col pad-youtub">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/uOljoOvycuo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="col pad-youtub">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Gh8cZ_W2vR4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="col pad-youtub">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/pWqext64kxM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="col pad-youtub">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/9_2UDGF7Pck" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="col pad-youtub">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/pgtGOgVIhqc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+</div>
+{% endblock body %}

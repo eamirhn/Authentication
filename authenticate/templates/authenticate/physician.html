@@ -1,0 +1,34 @@
+{% extends 'homePage.html' %}
+{%load static%}
+{% load crispy_forms_tags %}
+{% load socialaccount %}
+{% block title %}physician{% endblock title %}
+{% block header %}
+{% endblock header %}
+{% block body %}
+<style>
+    .test{
+        display:flex;
+        margin-top:2rem;
+        justify-content:center;
+        align-items:center;
+    }
+
+</style>
+<div  class="container-md" >
+    <div class="test row align-items-center row-cols-1">
+        <div  class=" col-4 center-things">
+            <div class="list-group"> 
+                <a href="{% static 'data1.txt' %}" class="list-group-item list-group-item-action">Data 1</a>
+                <a href="{% static 'data2.txt' %}" class="list-group-item list-group-item-action">Data 2</a>
+                <a href="{% static 'data3.txt' %}" class="list-group-item list-group-item-action">Data 3</a>
+                <a href="{% static 'data4.txt' %}" class="list-group-item list-group-item-action">Data 4</a>
+                <a href="{% static 'data5.txt' %}" class="list-group-item list-group-item-action">Data 5</a>
+                <a href="{% static 'data6.txt' %}" class="list-group-item list-group-item-action">Data 6</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock body %}

@@ -11,4 +11,5 @@ urlpatterns = [
     path('patient/',patientView,name='patient'),
     path('researcher/',researcherView,name='researcher'),
     path('physician/',physicianView,name='physician'),
+    #path('login/redirects/',custom_redirects,name='custom_redirects')
 ]

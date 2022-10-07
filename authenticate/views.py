@@ -72,4 +72,13 @@ def physicianView(request):
     return render(request, 'authenticate/physician.html')
     
 def researcherView(request):
+    #print(User.objects.get(username=request.user),request)
     return render(request, 'authenticate/researcher.html')
+
+# def custom_redirects(request):
+#     account = User.objects.get(username=request.user)
+#     print(f'account.provider:{account.provider}')
+#     if account.provider == "Google":
+#         return render(request, 'authenticate/patient.html')
+#     else:
+#         return render(request, 'homePage.html')

@@ -33,14 +33,10 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.openid',
-    'allauth.socialaccount.providers.linkedin_oauth2',
     'allauth.socialaccount.providers.github',
-    'allauth.socialaccount.providers.twitter',
-    'allauth.socialaccount.providers.yahoo',
     'allauth.socialaccount.providers.reddit',
 
-  
+
 
 ]
 
@@ -138,7 +134,7 @@ SOCIALACCOUNT_PROVIDERS = {
             'access_type': 'online',
         }
     },
-        'linkedin': {
+    'linkedin': {
         'SCOPE': [
             'r_basicprofile',
             'r_emailaddress'
@@ -152,25 +148,24 @@ SOCIALACCOUNT_PROVIDERS = {
             'public-profile-url',
         ]
     },
-        'github': {
+    'github': {
         'SCOPE': [
             'user',
             'repo',
             'read:org',
         ],
     },
-        'reddit': {
+    'reddit': {
         'AUTH_PARAMS': {'duration': 'permanent'},
         'SCOPE': ['identity', 'submit'],
         'USER_AGENT': 'django:myappid:1.0 (by /u/yourredditname)',
     }
-    
-    
-   
+
+
+
 }
 
 SITE_ID = 4
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
-

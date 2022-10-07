@@ -21,7 +21,7 @@
                 {% if user.is_authenticated %}
                 <p>Welcome, You are logged in as {{ user.username }}</p>
               {% else %}
-                <a href="{% provider_login_url 'google' %}">Login With External Authentication</a>
+                <a href="/accounts/login/">Login With External Authentication</a>
               {% endif %}  
                             
               <p class="text-center">If you already have an account, <a href="{% url 'login' %}">login</a> instead.</p>

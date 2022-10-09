@@ -8,8 +8,7 @@ from django.contrib.auth import views as auth_views
 from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.conf import settings
-
-
+from .models import *
 def signUpView(request):
     if request.method == 'POST':
         form = CreateUserForm(request.POST)
@@ -69,16 +68,24 @@ def patientView(request):
     return render(request, 'authenticate/patient.html')
 
 def physicianView(request):
-    return render(request, 'authenticate/physician.html')
+    context = User.objects.filter(Role_IDrole=1)
+    arg = {'users':context,
+    'note':Note.objects.all(),
+    'tests':Test.objects.all(),
+    'organization':Organization.objects.all(),
+    'therapy_list':Therapy_List.objects.all(),
+    'test_session':Test_Session.objects.all()}
+    return render(request, 'authenticate/physician.html',arg)
     
 def researcherView(request):
-    #print(User.objects.get(username=request.user),request)
-    return render(request, 'authenticate/researcher.html')
+    context = User.objects.filter(Role_IDrole=1)
+    arg = {'users':context,
+    'note':Note.objects.all(),
+    'tests':Test.objects.all(),
+    'organization':Organization.objects.all(),
+    'therapy_list':Therapy_List.objects.all(),
+    'test_session':Test_Session.objects.all()}
+    return render(request, 'authenticate/researcher.html',arg)
 
-# def custom_redirects(request):
-#     account = User.objects.get(username=request.user)
-#     print(f'account.provider:{account.provider}')
-#     if account.provider == "Google":
-#         return render(request, 'authenticate/patient.html')
-#     else:
-#         return render(request, 'homePage.html')
+
+

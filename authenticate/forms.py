@@ -19,3 +19,7 @@ class CreateUserForm(UserCreationForm):
             raise forms.ValidationError(
                 "We have a user with this user Email!")
         return data
+
+
+# class SignupForm(forms.Form):
+#     email = forms.EmailField(max_length=150)

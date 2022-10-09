@@ -13,9 +13,14 @@
         justify-content:center;
         align-items:center;
     }
-
+    .margin-c{
+        display:flex;
+        flex-direction:column;
+        margin-left:4rem;
+    
+    }
 </style>
-<div  class="container-md" >
+<div  class="container-md margin-c" >
     <div class="test row align-items-center row-cols-1">
         <div  class=" col-4 center-things">
             <div class="list-group"> 
@@ -28,6 +33,62 @@
             </div>
         </div>
     </div>
+
+    
+    <div class="row row-cols-1">
+        <h1 class="display-4">Patients</h1>
+    </div>   
+        
+        {% for user in users %}
+
+        <div class="row">
+            <p>Name : {{user.User}} | Email : {{user.email}} | Organization : {{user.Organization}} | Role : {{user.Role_IDrole}} | lat : {{user.lat}} | long : {{user.long}}</p> 
+        </div>
+        {%endfor%}
+        <div class="row row-cols-1">
+            <h1 class="display-4">Notes</h1>
+        </div>
+        {% for o in note %}
+        <div class="row">
+            <p>Note : {{o.note}} | Test Session : {{o.Test_Session_IDtest_session}} | Patient : {{o.User_IDmed}}</p>
+        </div>
+        {%endfor%}
+
+        <div class="row row-cols-1">
+            <h1 class="display-4">Tests</h1>
+        </div>
+        {% for o in tests %}
+        <div class="row">
+            <p>Time : {{o.dateTime}} | Therapy : {{o.Therapy_IDtherapy.User_IDpatient}}</p>
+        </div>
+        {%endfor%}
+        
+        <div class="row row-cols-1">
+            <h1 class="display-4">Organizations</h1>
+        </div>
+        {% for o in organization %}
+        <div class="row">
+            <p>organizations : {{o.name}}</p>
+        </div>
+        {%endfor%}
+
+        <div class="row row-cols-1">
+            <h1 class="display-4">Therapy Lists</h1>
+        </div>
+        {% for o in therapy_list %}
+        <div class="row">
+            <p>Name : {{o.name}} | Medicine : {{o.Medicine_IDmedicine}} | Dosage : {{o.Dosage}}</p>
+        </div>
+        {%endfor%}
+        <div class="row row-cols-1">
+            <h1 class="display-4">Test Sessions</h1>
+        </div>
+        {% for o in test_session %}
+        <div class="row">
+            <p>Type : {{o.test_type}} | DataURL : {{o.DataURL}} | Test : {{o.Test_IDtest.Therapy_IDtherapy.User_IDpatient}}</p>
+        </div>
+        {%endfor%}
+
 </div>
 
 

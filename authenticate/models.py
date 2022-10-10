@@ -21,18 +21,18 @@ class Therapy_List(models.Model):
 
 
     Medicine_IDmedicine = models.ForeignKey(
-    Medicine, on_delete=models.CASCADE, blank=True, null=True)
+    Medicine, on_delete=models.CASCADE, blank=True, null=False)
     Dosage = models.CharField(max_length=45,null=False)
 
 class Therapy(models.Model):
     therapyID = models.IntegerField(primary_key=True,null=False)
-
+    
     #ForigenKey
     User_IDpatient = models.ForeignKey(
-    User, on_delete=models.CASCADE, blank=True, null=True)
+    User, on_delete=models.CASCADE, blank=True, null=False)
     User_IDmed = models.IntegerField(null=True)
     TherapyList_IDtherapylist = models.ForeignKey(
-    Therapy_List, on_delete=models.CASCADE, blank=True, null=True)
+    Therapy_List, on_delete=models.CASCADE, blank=True, null=False)
 
 
 
@@ -42,8 +42,7 @@ class Test(models.Model):
 
     #ForigenKey
     Therapy_IDtherapy = models.ForeignKey(
-    Therapy, on_delete=models.CASCADE, blank=True, null=True)
-
+    Therapy, on_delete=models.CASCADE, blank=True, null=False)
 
 
 
@@ -54,7 +53,7 @@ class Test_Session(models.Model):
 
     #ForigenKey
     Test_IDtest = models.ForeignKey(
-    Test, on_delete=models.CASCADE, blank=True, null=True)
+    Test, on_delete=models.CASCADE, blank=True, null=False)
     def __str__(self):
         return self.DataURL
 
@@ -65,9 +64,9 @@ class Note(models.Model):
 
     #ForigenKey
     Test_Session_IDtest_session = models.ForeignKey(
-    Test_Session, on_delete=models.CASCADE, blank=True, null=True)
+    Test_Session, on_delete=models.CASCADE, blank=True, null=False)
     User_IDmed = models.ForeignKey(
-    User, on_delete=models.CASCADE, blank=True, null=True)
+    User, on_delete=models.CASCADE, blank=True, null=False)
     def __str__(self):
         return self.note
 
@@ -91,12 +90,12 @@ class Role(models.Model):
 
 
 class User(models.Model):
-    User = models.ForeignKey(User, on_delete=models.CASCADE,null=True,blank=True)
+    User = models.ForeignKey(User, on_delete=models.CASCADE,null=False)
     userID = models.IntegerField(primary_key=True,null=False)
     Role_IDrole = models.ForeignKey(
-        Role, on_delete=models.CASCADE,null=True,blank=True)
+        Role, on_delete=models.CASCADE,null=False)
     Organization = models.ForeignKey(
-        Organization, on_delete=models.CASCADE, null=True,blank=True)
+        Organization, on_delete=models.CASCADE, null=False)
     
 
     email = models.EmailField(max_length=255)

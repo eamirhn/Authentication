@@ -160,9 +160,6 @@ SOCIALACCOUNT_PROVIDERS = {
         'SCOPE': ['identity', 'submit'],
         'USER_AGENT': 'django:myappid:1.0 (by /u/yourredditname)',
     }
-
-
-
 }
 
 SITE_ID = 4

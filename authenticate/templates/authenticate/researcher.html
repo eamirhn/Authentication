@@ -19,27 +19,81 @@
 }
 </style>
 <div class="margin-c container-md">
-    <div class="row align-items-center row-cols-1 gx-5" style="margin-top:3rem;">
-        <div class="col-3 center-things">
+    <div class="row row-cols-1 gx-5" style="margin:3rem;">
+        <div class="col-3">
             <div class="list-group">
                 <a href="{% url 'parkinson' %}">
                     <button type="button" class="list-group-item list-group-item-action">PD Research Parkinson Disease</button>
                 </a>
             </div>
         </div>
-        
-        <div class="col-3 center-things">
-            <div class="list-group"> 
-                <a href="{% static 'data1.txt' %}" class="list-group-item list-group-item-action">Data 1</a>
-                <a href="{% static 'data2.txt' %}" class="list-group-item list-group-item-action">Data 2</a>
-                <a href="{% static 'data3.txt' %}" class="list-group-item list-group-item-action">Data 3</a>
-                <a href="{% static 'data4.txt' %}" class="list-group-item list-group-item-action">Data 4</a>
-                <a href="{% static 'data5.txt' %}" class="list-group-item list-group-item-action">Data 5</a>
-                <a href="{% static 'data6.txt' %}" class="list-group-item list-group-item-action">Data 6</a>
-            
-            </div>
-        </div>
+
     </div>
+
+    <div class="row row-cols-1">
+        
+        <div class="col">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <a href="{% static 'data1.txt' %}"><h5 class="card-title">Data 1</h5></a>
+                <h6 class="card-subtitle mb-2 text-muted">You can see and submit comments here</h6>
+              <a href="{% url 'comments' 1 %}" class="card-link">Comments</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <a href="{% static 'data2.txt' %}"><h5 class="card-title">Data 2</h5></a>
+                <h6 class="card-subtitle mb-2 text-muted">You can see and submit comments here</h6>
+              <a href="{% url 'comments' 2 %}" class="card-link">Comments</a>
+            </div>
+          </div>
+        </div>
+
+          <div class="col">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <a href="{% static 'data3.txt' %}"><h5 class="card-title">Data 3</h5></a>
+                <h6 class="card-subtitle mb-2 text-muted">You can see and submit comments here</h6>
+              <a href="{% url 'comments' 3 %}" class="card-link">Comments</a>
+            </div>
+          </div>
+        </div>
+
+          <div class="col">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <a href="{% static 'data4.txt' %}"><h5 class="card-title">Data 4</h5></a>
+                <h6 class="card-subtitle mb-2 text-muted">You can see and submit comments here</h6>
+              <a href="{% url 'comments' 4 %}" class="card-link">Comments</a>
+            </div>
+          </div>
+        </div>
+
+          <div class="col">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <a href="{% static 'data5.txt' %}"><h5 class="card-title">Data 5</h5></a>
+                <h6 class="card-subtitle mb-2 text-muted">You can see and submit comments here</h6>
+              <a href="{% url 'comments' 5 %}" class="card-link">Comments</a>
+            </div>
+          </div>
+        </div>
+
+          <div class="col">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <a href="{% static 'data6.txt' %}"><h5 class="card-title">Data 6</h5></a>
+                <h6 class="card-subtitle mb-2 text-muted">You can see and submit comments here</h6>
+              <a href="{% url 'comments' 6 %}" class="card-link">Comments</a>
+            </div>
+          </div>
+        </div>
+
+    </div> 
+
 
     <div class="row row-cols-1">
         <h1 class="display-4">Patients</h1>

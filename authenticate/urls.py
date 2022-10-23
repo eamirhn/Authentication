@@ -11,5 +11,6 @@ urlpatterns = [
     path('patient/',patientView,name='patient'),
     path('researcher/',researcherView,name='researcher'),
     path('physician/',physicianView,name='physician'),
-    #path('login/redirects/',custom_redirects,name='custom_redirects')
+    path('researcher/comments/<int:data_id>/',commentView,name='comments'),
+    path('researcher/comments/delete/<int:id>/<int:data_id>/',deleteCommentView,name='delete')
 ]

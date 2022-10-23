@@ -1,5 +1,6 @@
 from email.policy import default
 from pyexpat import model
+from unittest.util import _MAX_LENGTH
 from django.db import models
 from django.contrib.auth.models import User ,AbstractBaseUser
 from django.db.models.fields.related import ForeignKey
@@ -103,3 +104,11 @@ class User(models.Model):
     long = models.FloatField(default=None,null=True,blank=True)
 
     provider = models.CharField(max_length=20,null=True,blank=True)
+
+
+
+class Comments(models.Model):
+    data_id = models.IntegerField(null=True,blank=True)
+    user = models.CharField(max_length=40,null=True,blank=True)
+    comment = models.TextField()
+    dateAdded = models.DateTimeField(auto_now=True,null=True,blank=True)

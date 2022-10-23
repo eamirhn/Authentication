@@ -9,6 +9,9 @@ from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.conf import settings
 from .models import *
+from .forms import commentsForm
+
+
 def signUpView(request):
     if request.method == 'POST':
         form = CreateUserForm(request.POST)
@@ -87,5 +90,29 @@ def researcherView(request):
     'test_session':Test_Session.objects.all()}
     return render(request, 'authenticate/researcher.html',arg)
 
+
+
+def commentView(request,data_id):
+    form = commentsForm()
+    arg = {
+        'id':data_id,
+        'form':form,
+        'comments': reversed(Comments.objects.filter(data_id=data_id))
+
+    }
+    if request.method == 'POST':
+        form = commentsForm(request.POST)
+        comment = form.data['comment']
+        print(request.user.username)
+        object = Comments.objects.create(user=request.user.username,comment=comment,data_id=data_id)
+        object.save()
+        return redirect('/researcher/comments/'+str(data_id)+'/')
+    else:
+        return render(request,'authenticate/comments.html',arg)
+
+
+def deleteCommentView(request,id,data_id): 
+    Comments.objects.get(id=id).delete()
+    return redirect('/researcher/comments/'+str(data_id)+'/')   
 
 

@@ -21,5 +21,5 @@ class CreateUserForm(UserCreationForm):
         return data
 
 
-# class SignupForm(forms.Form):
-#     email = forms.EmailField(max_length=150)
+class commentsForm(forms.Form):
+    comment = forms.CharField(widget=forms.Textarea)
